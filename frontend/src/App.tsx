@@ -1,5 +1,9 @@
 import { useState } from 'react'
 import { Box, TextField, Button, AppBar, Toolbar, Typography, ThemeProvider, createTheme, CssBaseline, Card } from '@mui/material'
+import EditNoteIcon from '@mui/icons-material/EditNote'
+import ChecklistIcon from '@mui/icons-material/Checklist'
+import BarChartIcon from '@mui/icons-material/BarChart'
+import PersonIcon from '@mui/icons-material/Person'
 
 const theme = createTheme({
   palette: {
@@ -21,6 +25,7 @@ const theme = createTheme({
 
 function App() {
   const [inputText, setInputText] = useState('')
+  const [isExpanded, setIsExpanded] = useState(false)
 
   return (
     <ThemeProvider theme={theme}>
@@ -37,19 +42,57 @@ function App() {
         </AppBar>
 
         {/* Main Layout */}
-        <Box sx={{ display: 'flex', flex: 1 }}>
+        <Box sx={{ display: 'flex', flex: 1, bgcolor: 'background.default' }}>
 
           {/* Sidebar */}
-          <Box sx={{
-            width: 200,
-            bgcolor: '#e6e2d8',
-            p: 3, display: 'flex',
-            flexDirection: 'column', gap: 3
-          }}>
+          <Box
+            onMouseEnter={() => setIsExpanded(true)}
+            onMouseLeave={() => setIsExpanded(false)}
+            sx={{
+              width: isExpanded ? 220 : 80,
+              bgcolor: '#e6e2d8',
+              py: 4,
+              px: isExpanded ? 3 : 0,
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: isExpanded ? 'flex-start' : 'center',
+              gap: 3,
+              borderRight: '1px solid rgba(0,0,0,0.25)',
+              transition: 'width 0.3s ease, padding 0.3s ease, align-items 0.3s ease'
+            }}>
 
-            <Typography variant='body2'>Journal</Typography>
-            <Typography variant='body2'>Statistics</Typography>
-            <Typography variant='body2'>Account</Typography>
+            {[
+              { label: 'Journal', icon: <EditNoteIcon /> },
+              { label: 'Habits', icon: <ChecklistIcon /> },
+              { label: 'Statistics', icon: <BarChartIcon /> },
+              { label: 'Account', icon: <PersonIcon /> }
+            ].map(item => (
+              <Box
+                key={item.label}
+                sx={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: 2,
+                  width: '100%',
+                  p: 1.5,
+                  borderRadius: 2,
+                  cursor: 'pointer',
+                  justifyContent: isExpanded ? 'flex-start' : 'center',
+                  transition: 'all 0.2s cubic-bezier(0.4,0,0.2,1)', '&:hover': { bgcolor: 'rgba(122,158,126,0.18)', transform: 'translateX(2px)' }
+                }}>
+                {item.icon}
+                <Typography
+                  sx={{
+                    opacity: isExpanded ? 1 : 0,
+                    ml: isExpanded ? 0 : -1,
+                    transition: 'opacity 0.2s ease, margin 0.2s ease',
+                    whiteSpace: 'nowrap',
+                    overflow: 'hidden'
+                  }}>
+                  {item.label}
+                </Typography>
+              </Box>
+            ))}
 
           </Box>
 
@@ -59,7 +102,8 @@ function App() {
               display: 'flex',
               flex: 1,
               p: 4,
-              gap: 4
+              gap: 4,
+              bgcolor: 'background.default'
             }}
           >
             <Box sx={{ flex: 4 }}>
