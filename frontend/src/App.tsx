@@ -4,6 +4,8 @@ import EditNoteIcon from '@mui/icons-material/EditNote'
 import ChecklistIcon from '@mui/icons-material/Checklist'
 import BarChartIcon from '@mui/icons-material/BarChart'
 import PersonIcon from '@mui/icons-material/Person'
+import FeedbackIcon from '@mui/icons-material/Feedback';
+import { Feed } from '@mui/icons-material'
 
 const theme = createTheme({
   palette: {
@@ -72,7 +74,6 @@ function App() {
                 sx={{
                   display: 'flex',
                   alignItems: 'center',
-                  gap: 2,
                   width: '100%',
                   p: 1.5,
                   borderRadius: 2,
@@ -81,19 +82,39 @@ function App() {
                   transition: 'all 0.2s cubic-bezier(0.4,0,0.2,1)', '&:hover': { bgcolor: 'rgba(122,158,126,0.18)', transform: 'translateX(2px)' }
                 }}>
                 {item.icon}
-                <Typography
-                  sx={{
-                    opacity: isExpanded ? 1 : 0,
-                    ml: isExpanded ? 0 : -1,
-                    transition: 'opacity 0.2s ease, margin 0.2s ease',
-                    whiteSpace: 'nowrap',
-                    overflow: 'hidden'
-                  }}>
-                  {item.label}
-                </Typography>
+                {isExpanded && (
+                  <Typography
+                    sx={{
+                      opacity: isExpanded ? 1 : 0,
+                      ml: 1,
+                      fontSize: 15,
+                      whiteSpace: 'nowrap',
+                      overflow: 'hidden'
+                    }}>
+                    {item.label}
+                  </Typography>
+                )}
               </Box>
             ))}
-
+            <Box sx={{ mt: 'auto', mb: 2, width: '100%' }}>
+              <Box
+                sx={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: isExpanded ? 'flex-start' : 'center',
+                  p: 1.5,
+                  borderRadius: 2,
+                  cursor: 'pointer',
+                  '&:hover': { bgcolor: 'rgba(79,111,82,0.25)' }
+                }}>
+                  <FeedbackIcon/>
+                  {isExpanded && (
+                    <Typography sx={{ ml: 2, fontSize: 15, whiteSpace: 'nowrap', overflow: 'hidden'}}>
+                    Give Feedback
+                    </Typography>
+                  )}
+              </Box>
+            </Box>
           </Box>
 
           {/* Main content */}
