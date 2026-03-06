@@ -18,27 +18,49 @@ function App() {
 
   const toggleMode = () => setMode(prev => (prev === 'light' ? 'dark' : 'light'))
 
-  const theme = createTheme({
-    palette: {
-      mode,
-      background: {
-        default: mode === 'light' ? '#f4f1ea' : '#242424',
-        paper: mode === 'light' ? '#faf8f3' : '#2b2b2b'
-      },
-      primary: {
-        main: mode === 'light' ? '#7a9e7e' : '#a0d6b4'
-      },
-      secondary: {
-        main: mode === 'light' ? '#4f6f52' : '#8fc1a9'
-      },
-      text: {
-        primary: mode === 'light' ? '#4f6f52' : '#f4f1ea'
-      }
+const theme = createTheme({
+  palette: {
+    mode,
+
+    background: {
+      default: mode === 'light' ? '#f4f1ea' : '#242424',
+      paper: mode === 'light' ? '#faf8f3' : '#2b2b2b'
     },
-    typography: {
-      fontFamily: 'Inter, sans-serif'
+
+    primary: {
+      main: mode === 'light' ? '#7a9e7e' : '#a0d6b4'
+    },
+
+    secondary: {
+      main: mode === 'light' ? '#4f6f52' : '#8fc1a9'
+    },
+
+    text: {
+      primary: mode === 'light' ? '#4f6f52' : '#f4f1ea'
     }
-  })
+  },
+
+  typography: {
+    fontFamily: 'Inter, sans-serif'
+  },
+
+  layout: {
+    topbar: {
+      bg: mode === 'light' ? '#e6e2d8' : '#2c2c2c',
+      text: mode === 'light' ? '#4f6f52' : '#f4f1ea'
+    },
+
+    sidebar: {
+      bg: mode === 'light' ? '#faf8f3' : '#2b2b2b',
+      text: mode === 'light' ? '#4f6f52' : '#eaeaea',
+      hover: mode === 'light' ? '#e8e3d9' : '#383838'
+    },
+
+    main: {
+      bg: mode === 'light' ? '#f4f1ea' : '#242424'
+    }
+  }
+})
   const isDark = mode === 'dark'
 
   return (
@@ -47,35 +69,7 @@ function App() {
       <Box sx={{ display: 'flex', flexDirection: 'column', height: '100vh' }}>
 
         {/* Topbar */}
-        <AppBar
-          position="static"
-          elevation={0}
-          sx={{
-            backgroundColor: mode ==='light' ? theme.palette.primary.main : theme.palette.background.paper,
-            color: theme.palette.text.primary
-          }}>
-          <Toolbar sx={{ position: 'relative' }}>
-            <Typography
-              variant="h6"
-              sx={{
-                fontWeight: 600,
-                position: 'absolute',
-                left: '50%',
-                transform: 'translateX(-50%)'
-              }}>
-              Smart Journal
-            </Typography>
-            <Box sx={{ marginLeft: 'auto', display: 'flex', gap: 1 }}>
-              <IconButton color='inherit'>
-                <SettingsIcon />
-              </IconButton>
-              <IconButton color='inherit' onClick={toggleMode}>
-                {isDark ? <LightModeIcon /> : <DarkModeIcon />}
-              </IconButton>
-            </Box>
-          </Toolbar>
-        </AppBar>
-
+      
         {/* Main Layout */}
         <Box sx={{ display: 'flex', flex: 1, bgcolor: 'background.default' }}>
 
