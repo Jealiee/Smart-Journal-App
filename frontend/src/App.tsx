@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Box, TextField, Button, AppBar, Toolbar, Typography, ThemeProvider, createTheme, CssBaseline, Card, Icon } from '@mui/material'
+import { Box, TextField, Button, Typography, ThemeProvider, createTheme, CssBaseline, Card} from '@mui/material'
 
 import Sidebar from './components/sidebar'
 import Topbar from './components/topbar'
@@ -7,7 +7,6 @@ import Topbar from './components/topbar'
 
 function App() {
   const [inputText, setInputText] = useState('')
-  const [isExpanded, setIsExpanded] = useState(false)
   const [mode, setMode] = useState<'light' | 'dark'>('light')
 
   const toggleMode = () => setMode(prev => (prev === 'light' ? 'dark' : 'light'))
@@ -55,7 +54,6 @@ function App() {
       }
     }
   })
-  const isDark = mode === 'dark'
 
   return (
     <ThemeProvider theme={theme}>
