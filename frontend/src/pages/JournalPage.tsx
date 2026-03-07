@@ -1,5 +1,7 @@
 import { Box, TextField, Typography, Card, List, ListItemButton, ListItemText } from "@mui/material"
 import { useState } from "react"
+import { Fab } from "@mui/material"
+import SaveIcon from "@mui/icons-material/Save"
 
 type Entry = {
     date: string
@@ -71,11 +73,10 @@ export default function JournalPage() {
 
             {/* Editor */}
             <Box sx={{
-                flex: 1,
+                flex: 7,
                 p: 4,
                 display: "flex",
-                flexDirection: "column",
-                minWidth: 0
+                flexDirection: "column"
             }}>
                 <Typography variant="h4" sx={{ mb: 3 }}>
                     {selectedEntry.date}
@@ -84,24 +85,61 @@ export default function JournalPage() {
                 <Card sx={{
                     flex: 1,
                     p: 3,
-                    display: "flex"
+                    display: "flex",
+                    flexDirection: "column",
+                    position: 'relative'
                 }}>
                     <TextField
                         multiline
                         fullWidth
                         placeholder="Write your thoughts..."
                         defaultValue={selectedEntry.content}
+                        InputProps={{
+                            sx: {
+                                height: "100%",
+                                alignItems: "stretch"
+                            }
+                        }}
                         sx={{
                             flex: 1,
+                            "& .MuiInputBase-root": {
+                                height: "100%"
+                            },
                             "& textarea": {
-                                height: '100% !important',
+                                height: "100% !important",
+                                overflow: "auto",
                                 fontSize: "1.05rem",
-                                lineHeight: 1.7
+                                lineHeight: 1.7,
+                                padding: "12px"
                             }
                         }}
                     />
+                    <Fab
+                        color="primary"
+                        size="medium"
+                        sx={{
+                            position: "absolute",
+                            bottom: 20,
+                            right: 20,
+                            boxshadow: 3
+                        }}
+                    >
+                        <SaveIcon />
+                    </Fab>
                 </Card>
             </Box>
+
+            <Box sx={{
+                flex: 3,
+                borderLeft: "1px solid",
+                borderColor: "divider",
+                p: 3
+            }}>
+                <Typography variant="h6">
+                    Insights
+                </Typography>
+            </Box>
+
         </Box>
     )
 }
