@@ -1,14 +1,13 @@
 import { useState } from 'react'
-import { Box, TextField, Button, Typography, ThemeProvider, createTheme, CssBaseline, Card} from '@mui/material'
+import { Box, ThemeProvider, createTheme, CssBaseline} from '@mui/material'
 
 import Sidebar from './components/sidebar'
 import Topbar from './components/topbar'
+import JournalPage from './pages/JournalPage'
 
 
 function App() {
-  const [inputText, setInputText] = useState('')
   const [mode, setMode] = useState<'light' | 'dark'>('light')
-
   const toggleMode = () => setMode(prev => (prev === 'light' ? 'dark' : 'light'))
 
   const theme = createTheme({
@@ -67,49 +66,11 @@ function App() {
         <Box sx={{ display: 'flex', flex: 1, bgcolor: 'background.default' }}>
 
           {/* Sidebar */}
-         <Sidebar/>
+          <Sidebar />
 
           {/* Main content */}
-          <Box
-            sx={{
-              display: 'flex',
-              flex: 1,
-              p: 4,
-              gap: 4,
-              bgcolor: 'background.default'
-            }}
-          >
-            <Box sx={{ flex: 4 }}>
-              <Card sx={{ p: 3 }}>
-                <Typography variant='h6' sx={{ mb: 2 }}>
-                  Today's Entry
-                </Typography>
-                <TextField
-                  fullWidth
-                  multiline
-                  minRows={12}
-                  value={inputText}
-                  onChange={(e) => setInputText(e.target.value)}
-                  placeholder='How was your day?' />
+          <JournalPage />
 
-                <Box sx={{ mt: 2, display: 'flex', justifyContent: 'flex-end' }}>
-                  <Button variant='contained'>
-                    Save Entry
-                  </Button>
-                </Box>
-
-              </Card>
-            </Box>
-
-            <Box sx={{ flex: 6 }}>
-              <Card sx={{ p: 3, height: '100%' }}>
-                <Typography variant='h6'>
-                  Coming Soon ...
-                </Typography>
-              </Card>
-            </Box>
-
-          </Box>
         </Box>
       </Box>
     </ThemeProvider >
