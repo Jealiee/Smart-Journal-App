@@ -78,17 +78,20 @@ self.onmessage = async (e: MessageEvent<InMsg>) => {
       console.error("[foodWorker] model not loaded");
       return;
     }
+    const t0 = performance.now();
     const input = "extract_food: " + normalize(msg.text);
     const encoded = await tokenizer(input, { return_tensors: "np" });
     const inputIds = Uint32Array.from(
       encoded.input_ids.data as BigInt64Array,
-      (v) => Number(v)
+      (v) => Number(v),
     );
     const outputIds = model.predict_ids(inputIds, 128);
     const decoded: string = tokenizer.decode(Array.from(outputIds), {
       skip_special_tokens: true,
     });
     const foods = parseFoods(decoded);
+    const t1 = performance.now();
+    console.log(`[foodWorker] prediction took ${(t1 - t0).toFixed(1)} ms`);
     self.postMessage({ type: "result", foods } satisfies OutMsg);
   }
 };
