@@ -1842,5 +1842,1110 @@
         }
       }
     ]
+  },
+  {
+    "note": "regular person - weekday evening, beans on toast after long day",
+    "sentences": [
+      "Got home from work around half six, absolutely knackered.",
+      "Couldn't face cooking anything proper so just made beans on toast.",
+      "Had a cup of tea while it was heating up.",
+      "Sat on the sofa and ate it in front of the telly.",
+      "Thought about having something else after but honestly couldn't be bothered.",
+      "The beans were one of those big tins, so had a fair amount.",
+      "Two slices of toast, big tin of beans, that was dinner."
+    ],
+    "foods": [
+      {
+        "name": "beans",
+        "name_sentence": 1,
+        "initial": null,
+        "final": {
+          "quantity": null,
+          "unit": null,
+          "sentence": 5
+        }
+      },
+      {
+        "name": "toast",
+        "name_sentence": 1,
+        "initial": null,
+        "final": {
+          "quantity": 2,
+          "unit": "slices",
+          "sentence": 6
+        }
+      },
+      {
+        "name": "tea",
+        "name_sentence": 2,
+        "initial": null,
+        "final": {
+          "quantity": null,
+          "unit": null,
+          "sentence": 2
+        }
+      }
+    ]
+  },
+  {
+    "note": "student - terrible eating day, instant noodles and snacks",
+    "sentences": [
+      "Deadline week so barely left my room.",
+      "Skipped breakfast entirely, just couldn't deal with it.",
+      "Had a pot noodle around 1 because it was fast.",
+      "Then spent five hours in the library trying to finish the essay.",
+      "Got a chocolate bar from the vending machine on the way back.",
+      "Too tired to cook properly so had another pot noodle for dinner.",
+      "Ate some biscuits while watching something mindless before bed.",
+      "Terrible eating day honestly but the essay got done."
+    ],
+    "foods": [
+      {
+        "name": "pot noodle",
+        "name_sentence": 2,
+        "initial": {
+          "quantity": 1,
+          "unit": null,
+          "sentence": 2
+        },
+        "final": {
+          "quantity": 2,
+          "unit": null,
+          "sentence": 5
+        }
+      },
+      {
+        "name": "chocolate bar",
+        "name_sentence": 4,
+        "initial": null,
+        "final": {
+          "quantity": 1,
+          "unit": null,
+          "sentence": 4
+        }
+      },
+      {
+        "name": "biscuits",
+        "name_sentence": 6,
+        "initial": null,
+        "final": {
+          "quantity": null,
+          "unit": null,
+          "sentence": 6
+        }
+      }
+    ]
+  },
+  {
+    "note": "family - cooking for kids, own food is different",
+    "sentences": [
+      "Saturday so I had both kids all day.",
+      "Made them fish fingers and chips for lunch, they love it.",
+      "I just picked at whatever was left, wasn't really hungry.",
+      "In the evening I cooked a proper meal for myself while they watched a film.",
+      "Made a chicken and vegetable stir fry with noodles.",
+      "Weighed the chicken out — had about 160g.",
+      "The noodles were a whole nest, so maybe 100g dry.",
+      "Kids had already eaten so it was just for me."
+    ],
+    "foods": [
+      {
+        "name": "stir fry",
+        "name_sentence": 4,
+        "initial": null,
+        "final": {
+          "quantity": null,
+          "unit": null,
+          "sentence": 4
+        }
+      },
+      {
+        "name": "chicken",
+        "name_sentence": 4,
+        "initial": null,
+        "final": {
+          "quantity": 160,
+          "unit": "g",
+          "sentence": 5
+        }
+      },
+      {
+        "name": "noodles",
+        "name_sentence": 4,
+        "initial": null,
+        "final": {
+          "quantity": 100,
+          "unit": "g",
+          "sentence": 6
+        }
+      }
+    ]
+  },
+  {
+    "note": "office worker - meeting-heavy day, desk lunch, snacks",
+    "sentences": [
+      "Monday, three back to back meetings starting at 9.",
+      "Grabbed a coffee and a croissant on the way into the office.",
+      "No break until nearly 1pm which was rough.",
+      "Ate at my desk — got a meal deal, tuna mayo sandwich and crisps.",
+      "Someone in the office had brought in birthday cake and I had a slice.",
+      "Another long meeting at 3, skipped any afternoon snack.",
+      "Left at 6 and picked up a ready meal on the way home.",
+      "Chicken tikka masala thing from the supermarket, not bad actually.",
+      "Had a biscuit with my tea later."
+    ],
+    "foods": [
+      {
+        "name": "coffee",
+        "name_sentence": 1,
+        "initial": null,
+        "final": {
+          "quantity": null,
+          "unit": null,
+          "sentence": 1
+        }
+      },
+      {
+        "name": "croissant",
+        "name_sentence": 1,
+        "initial": null,
+        "final": {
+          "quantity": 1,
+          "unit": null,
+          "sentence": 1
+        }
+      },
+      {
+        "name": "tuna mayo sandwich",
+        "name_sentence": 3,
+        "initial": null,
+        "final": {
+          "quantity": null,
+          "unit": null,
+          "sentence": 3
+        }
+      },
+      {
+        "name": "crisps",
+        "name_sentence": 3,
+        "initial": null,
+        "final": {
+          "quantity": null,
+          "unit": null,
+          "sentence": 3
+        }
+      },
+      {
+        "name": "birthday cake",
+        "name_sentence": 4,
+        "initial": null,
+        "final": {
+          "quantity": 1,
+          "unit": "slices",
+          "sentence": 4
+        }
+      },
+      {
+        "name": "chicken tikka masala",
+        "name_sentence": 7,
+        "initial": null,
+        "final": {
+          "quantity": null,
+          "unit": null,
+          "sentence": 7
+        }
+      },
+      {
+        "name": "biscuit",
+        "name_sentence": 8,
+        "initial": null,
+        "final": {
+          "quantity": null,
+          "unit": null,
+          "sentence": 8
+        }
+      }
+    ]
+  },
+  {
+    "note": "night out - pints, shots, kebab, others' food ignored",
+    "sentences": [
+      "Friday night out with a few mates.",
+      "Met them at the pub around 8, had two pints over the course of the evening.",
+      "Someone suggested shots so we had one round — I had one.",
+      "We moved on to another bar, I didn't get another drink there.",
+      "Got hungry so we ended up at the kebab place on the high street.",
+      "I had a chicken kebab with chips.",
+      "Dave got a donor and Phil had a falafel wrap, I stuck with mine.",
+      "Got home around 1, just went straight to bed."
+    ],
+    "foods": [
+      {
+        "name": "lager",
+        "name_sentence": 1,
+        "initial": null,
+        "final": {
+          "quantity": 2,
+          "unit": null,
+          "sentence": 1
+        }
+      },
+      {
+        "name": "shot",
+        "name_sentence": 2,
+        "initial": null,
+        "final": {
+          "quantity": 1,
+          "unit": null,
+          "sentence": 2
+        }
+      },
+      {
+        "name": "chicken kebab",
+        "name_sentence": 5,
+        "initial": null,
+        "final": {
+          "quantity": null,
+          "unit": null,
+          "sentence": 5
+        }
+      },
+      {
+        "name": "chips",
+        "name_sentence": 5,
+        "initial": null,
+        "final": {
+          "quantity": null,
+          "unit": null,
+          "sentence": 5
+        }
+      }
+    ]
+  },
+  {
+    "note": "sick day - barely eating, tea and toast, broth",
+    "sentences": [
+      "Woke up feeling terrible, sore throat and a splitting headache.",
+      "Took some paracetamol and went back to bed.",
+      "Eventually managed a cup of tea around 10, couldn't stomach anything else.",
+      "Stayed on the sofa all morning watching rubbish telly.",
+      "Had one slice of plain toast around lunchtime, just to get something in.",
+      "Took another paracetamol in the afternoon.",
+      "Had some chicken broth in the evening, the supermarket carton stuff.",
+      "Just wanted something warm that wasn't too heavy.",
+      "Went to bed at half nine hoping to sleep it off."
+    ],
+    "foods": [
+      {
+        "name": "tea",
+        "name_sentence": 2,
+        "initial": null,
+        "final": {
+          "quantity": null,
+          "unit": null,
+          "sentence": 2
+        }
+      },
+      {
+        "name": "toast",
+        "name_sentence": 4,
+        "initial": null,
+        "final": {
+          "quantity": 1,
+          "unit": "slices",
+          "sentence": 4
+        }
+      },
+      {
+        "name": "chicken broth",
+        "name_sentence": 6,
+        "initial": null,
+        "final": {
+          "quantity": null,
+          "unit": null,
+          "sentence": 6
+        }
+      }
+    ]
+  },
+  {
+    "note": "weekend lazy - late breakfast, takeaway, snacks, beer",
+    "sentences": [
+      "Saturday, no alarm, woke up around 10.",
+      "Made a bacon sandwich — two rashers, white bread, ketchup.",
+      "Had a coffee while eating it.",
+      "Did essentially nothing for most of the day, watched sport.",
+      "Got hungry around 4 and ordered a chinese — spring rolls, fried rice, chicken chow mein.",
+      "Split it with my flatmate, had about half of everything.",
+      "Had a couple of beers while watching the football in the evening.",
+      "Then had some biscuits and another cup of tea before bed."
+    ],
+    "foods": [
+      {
+        "name": "bacon sandwich",
+        "name_sentence": 1,
+        "initial": null,
+        "final": {
+          "quantity": null,
+          "unit": null,
+          "sentence": 1
+        }
+      },
+      {
+        "name": "coffee",
+        "name_sentence": 2,
+        "initial": null,
+        "final": {
+          "quantity": null,
+          "unit": null,
+          "sentence": 2
+        }
+      },
+      {
+        "name": "spring rolls",
+        "name_sentence": 4,
+        "initial": null,
+        "final": {
+          "quantity": null,
+          "unit": null,
+          "sentence": 4
+        }
+      },
+      {
+        "name": "fried rice",
+        "name_sentence": 4,
+        "initial": null,
+        "final": {
+          "quantity": null,
+          "unit": null,
+          "sentence": 4
+        }
+      },
+      {
+        "name": "chicken chow mein",
+        "name_sentence": 4,
+        "initial": null,
+        "final": {
+          "quantity": null,
+          "unit": null,
+          "sentence": 4
+        }
+      },
+      {
+        "name": "beer",
+        "name_sentence": 6,
+        "initial": null,
+        "final": {
+          "quantity": 2,
+          "unit": null,
+          "sentence": 6
+        }
+      },
+      {
+        "name": "biscuits",
+        "name_sentence": 7,
+        "initial": null,
+        "final": {
+          "quantity": null,
+          "unit": null,
+          "sentence": 7
+        }
+      },
+      {
+        "name": "tea",
+        "name_sentence": 7,
+        "initial": null,
+        "final": {
+          "quantity": null,
+          "unit": null,
+          "sentence": 7
+        }
+      }
+    ]
+  },
+  {
+    "note": "wfh snacking - grazing through the day without real meals",
+    "sentences": [
+      "Working from home, started at 8, no breakfast planned.",
+      "Made a coffee and grabbed a couple of biscuits to tide me over.",
+      "Had a proper lunch eventually — soup and some bread.",
+      "Tin of tomato soup, three slices of bread.",
+      "Picked at some cheese and crackers around 3pm during a call.",
+      "Didn't have anything for dinner because I'd been snacking too much.",
+      "Had a cup of tea and a bit of chocolate in the evening.",
+      "Not a great food day but got loads of work done."
+    ],
+    "foods": [
+      {
+        "name": "coffee",
+        "name_sentence": 1,
+        "initial": null,
+        "final": {
+          "quantity": null,
+          "unit": null,
+          "sentence": 1
+        }
+      },
+      {
+        "name": "biscuits",
+        "name_sentence": 1,
+        "initial": null,
+        "final": {
+          "quantity": null,
+          "unit": null,
+          "sentence": 1
+        }
+      },
+      {
+        "name": "tomato soup",
+        "name_sentence": 2,
+        "initial": null,
+        "final": {
+          "quantity": null,
+          "unit": null,
+          "sentence": 3
+        }
+      },
+      {
+        "name": "bread",
+        "name_sentence": 2,
+        "initial": null,
+        "final": {
+          "quantity": 3,
+          "unit": "slices",
+          "sentence": 3
+        }
+      },
+      {
+        "name": "cheese",
+        "name_sentence": 4,
+        "initial": null,
+        "final": {
+          "quantity": null,
+          "unit": null,
+          "sentence": 4
+        }
+      },
+      {
+        "name": "crackers",
+        "name_sentence": 4,
+        "initial": null,
+        "final": {
+          "quantity": null,
+          "unit": null,
+          "sentence": 4
+        }
+      },
+      {
+        "name": "tea",
+        "name_sentence": 6,
+        "initial": null,
+        "final": {
+          "quantity": null,
+          "unit": null,
+          "sentence": 6
+        }
+      },
+      {
+        "name": "chocolate",
+        "name_sentence": 6,
+        "initial": null,
+        "final": {
+          "quantity": null,
+          "unit": null,
+          "sentence": 6
+        }
+      }
+    ]
+  },
+  {
+    "note": "quantity correction - thought it was more, turned out less",
+    "sentences": [
+      "Made oatmeal this morning, eyeballed it as usual.",
+      "Thought I'd used about 100g of oats.",
+      "Checked the bag afterwards though and it was more like 70g — I usually overestimate.",
+      "Had a black coffee with it, no sugar.",
+      "Work from home day so lunch was whatever was in.",
+      "Found some leftover rice and chicken from yesterday and had that.",
+      "The chicken was maybe 130g, rice about the same."
+    ],
+    "foods": [
+      {
+        "name": "oats",
+        "name_sentence": 0,
+        "initial": {
+          "quantity": 100,
+          "unit": "g",
+          "sentence": 1
+        },
+        "final": {
+          "quantity": 70,
+          "unit": "g",
+          "sentence": 2
+        }
+      },
+      {
+        "name": "coffee",
+        "name_sentence": 3,
+        "initial": null,
+        "final": {
+          "quantity": null,
+          "unit": null,
+          "sentence": 3
+        }
+      },
+      {
+        "name": "chicken",
+        "name_sentence": 5,
+        "initial": null,
+        "final": {
+          "quantity": 130,
+          "unit": "g",
+          "sentence": 6
+        }
+      },
+      {
+        "name": "rice",
+        "name_sentence": 5,
+        "initial": null,
+        "final": {
+          "quantity": 130,
+          "unit": "g",
+          "sentence": 6
+        }
+      }
+    ]
+  },
+  {
+    "note": "social meal - restaurant, others ordering different things, own food extracted",
+    "sentences": [
+      "Went out for dinner with some colleagues after work.",
+      "We went to an Italian place nearby, been before, it's good.",
+      "Everyone was ordering different things — some had pizza, some had pasta.",
+      "I had the risotto, it was a decent portion.",
+      "We shared some garlic bread to start.",
+      "A couple of them had dessert but I skipped it.",
+      "Had a glass of red wine with the meal.",
+      "Nice evening, good to get out of the office."
+    ],
+    "foods": [
+      {
+        "name": "risotto",
+        "name_sentence": 3,
+        "initial": null,
+        "final": {
+          "quantity": null,
+          "unit": null,
+          "sentence": 3
+        }
+      },
+      {
+        "name": "garlic bread",
+        "name_sentence": 4,
+        "initial": null,
+        "final": {
+          "quantity": null,
+          "unit": null,
+          "sentence": 4
+        }
+      },
+      {
+        "name": "red wine",
+        "name_sentence": 6,
+        "initial": null,
+        "final": {
+          "quantity": null,
+          "unit": null,
+          "sentence": 6
+        }
+      }
+    ]
+  },
+  {
+    "note": "meal prep context - cooking food is for the week, lunch is now",
+    "sentences": [
+      "Sunday meal prep session.",
+      "Cooked 600g of chicken breast in the oven for the week.",
+      "Made a big batch of rice, about 400g dry.",
+      "Portioned everything into containers and put it all away.",
+      "Didn't actually eat any of it yet — it's for the week.",
+      "For lunch I just made a quick cheese and pickle sandwich.",
+      "Had a coffee while I cleaned up.",
+      "Satisfying to have the week sorted."
+    ],
+    "foods": [
+      {
+        "name": "cheese and pickle sandwich",
+        "name_sentence": 5,
+        "initial": null,
+        "final": {
+          "quantity": null,
+          "unit": null,
+          "sentence": 5
+        }
+      },
+      {
+        "name": "coffee",
+        "name_sentence": 6,
+        "initial": null,
+        "final": {
+          "quantity": null,
+          "unit": null,
+          "sentence": 6
+        }
+      }
+    ]
+  },
+  {
+    "note": "very sparse eating - stressed, barely ate",
+    "sentences": [
+      "Really tough day, couldn't really focus on anything.",
+      "Skipped breakfast completely, just wasn't hungry.",
+      "Had a coffee around 11 but nothing with it.",
+      "Forced myself to eat something around 2 — just some crackers.",
+      "Couldn't be bothered with dinner, had a couple of biscuits.",
+      "Cup of tea before bed and that was about it.",
+      "Not ideal but sometimes days are just like that."
+    ],
+    "foods": [
+      {
+        "name": "coffee",
+        "name_sentence": 2,
+        "initial": null,
+        "final": {
+          "quantity": null,
+          "unit": null,
+          "sentence": 2
+        }
+      },
+      {
+        "name": "crackers",
+        "name_sentence": 3,
+        "initial": null,
+        "final": {
+          "quantity": null,
+          "unit": null,
+          "sentence": 3
+        }
+      },
+      {
+        "name": "biscuits",
+        "name_sentence": 4,
+        "initial": null,
+        "final": {
+          "quantity": null,
+          "unit": null,
+          "sentence": 4
+        }
+      },
+      {
+        "name": "tea",
+        "name_sentence": 5,
+        "initial": null,
+        "final": {
+          "quantity": null,
+          "unit": null,
+          "sentence": 5
+        }
+      }
+    ]
+  },
+  {
+    "note": "pub / social drinking - drinks and food, others' food not counted",
+    "sentences": [
+      "Sunday afternoon in the pub watching the game.",
+      "Had three pints over the afternoon.",
+      "My mate ordered some nachos and we shared them.",
+      "I had a burger with chips for lunch.",
+      "My girlfriend had the caesar salad, I didn't touch hers.",
+      "Had a coffee on the way home.",
+      "Decent afternoon."
+    ],
+    "foods": [
+      {
+        "name": "beer",
+        "name_sentence": 1,
+        "initial": null,
+        "final": {
+          "quantity": 3,
+          "unit": null,
+          "sentence": 1
+        }
+      },
+      {
+        "name": "nachos",
+        "name_sentence": 2,
+        "initial": null,
+        "final": {
+          "quantity": null,
+          "unit": null,
+          "sentence": 2
+        }
+      },
+      {
+        "name": "burger",
+        "name_sentence": 3,
+        "initial": null,
+        "final": {
+          "quantity": 1,
+          "unit": null,
+          "sentence": 3
+        }
+      },
+      {
+        "name": "chips",
+        "name_sentence": 3,
+        "initial": null,
+        "final": {
+          "quantity": null,
+          "unit": null,
+          "sentence": 3
+        }
+      },
+      {
+        "name": "coffee",
+        "name_sentence": 5,
+        "initial": null,
+        "final": {
+          "quantity": null,
+          "unit": null,
+          "sentence": 5
+        }
+      }
+    ]
+  },
+  {
+    "note": "late night eating - nothing all day then big meal",
+    "sentences": [
+      "Completely forgot to eat all day, got absorbed in what I was working on.",
+      "No breakfast, no lunch, just a couple of coffees.",
+      "Finally stopped at 7 and realised I was starving.",
+      "Made a proper dinner — pasta with a tomato and meat sauce.",
+      "Used 120g of pasta dry weight.",
+      "Had some parmesan on top, maybe 15g.",
+      "Felt much better after eating.",
+      "Also had an apple while I was waiting for it to cook."
+    ],
+    "foods": [
+      {
+        "name": "coffee",
+        "name_sentence": 1,
+        "initial": null,
+        "final": {
+          "quantity": null,
+          "unit": null,
+          "sentence": 1
+        }
+      },
+      {
+        "name": "pasta",
+        "name_sentence": 3,
+        "initial": null,
+        "final": {
+          "quantity": 120,
+          "unit": "g",
+          "sentence": 4
+        }
+      },
+      {
+        "name": "parmesan",
+        "name_sentence": 5,
+        "initial": null,
+        "final": {
+          "quantity": 15,
+          "unit": "g",
+          "sentence": 5
+        }
+      },
+      {
+        "name": "apple",
+        "name_sentence": 7,
+        "initial": null,
+        "final": {
+          "quantity": 1,
+          "unit": null,
+          "sentence": 7
+        }
+      }
+    ]
+  },
+  {
+    "note": "recovery morning after night out - minimal eating",
+    "sentences": [
+      "Rough morning after last night.",
+      "Woke up at 11, head pounding.",
+      "Made some toast — just plain, nothing on it, two slices.",
+      "Had a glass of water and a cup of tea.",
+      "Went back to sleep for a bit.",
+      "Felt more human by the afternoon.",
+      "Had some soup for lunch, chicken soup from a tin.",
+      "Nothing else really, not a hungry day."
+    ],
+    "foods": [
+      {
+        "name": "toast",
+        "name_sentence": 2,
+        "initial": null,
+        "final": {
+          "quantity": 2,
+          "unit": "slices",
+          "sentence": 2
+        }
+      },
+      {
+        "name": "tea",
+        "name_sentence": 3,
+        "initial": null,
+        "final": {
+          "quantity": null,
+          "unit": null,
+          "sentence": 3
+        }
+      },
+      {
+        "name": "chicken soup",
+        "name_sentence": 6,
+        "initial": null,
+        "final": {
+          "quantity": null,
+          "unit": null,
+          "sentence": 6
+        }
+      }
+    ]
+  },
+  {
+    "note": "gym + food day but realistic quantities, correction on rice",
+    "sentences": [
+      "Early gym session today, up at 6:30.",
+      "Had a protein shake before heading out.",
+      "Did about 45 minutes of weights, upper body.",
+      "Breakfast when I got back — three eggs scrambled, two slices of toast.",
+      "Work was fine, had a sandwich for lunch from the place nearby.",
+      "Chicken and avocado thing, it was good.",
+      "Dinner I cooked — salmon fillet, sweet potato, broccoli.",
+      "Weighed the salmon: about 180g.",
+      "Thought I'd had 200g of sweet potato but it was actually 160g after peeling."
+    ],
+    "foods": [
+      {
+        "name": "protein shake",
+        "name_sentence": 1,
+        "initial": null,
+        "final": {
+          "quantity": null,
+          "unit": null,
+          "sentence": 1
+        }
+      },
+      {
+        "name": "eggs",
+        "name_sentence": 3,
+        "initial": null,
+        "final": {
+          "quantity": 3,
+          "unit": null,
+          "sentence": 3
+        }
+      },
+      {
+        "name": "toast",
+        "name_sentence": 3,
+        "initial": null,
+        "final": {
+          "quantity": 2,
+          "unit": "slices",
+          "sentence": 3
+        }
+      },
+      {
+        "name": "chicken and avocado sandwich",
+        "name_sentence": 5,
+        "initial": null,
+        "final": {
+          "quantity": null,
+          "unit": null,
+          "sentence": 5
+        }
+      },
+      {
+        "name": "salmon",
+        "name_sentence": 6,
+        "initial": null,
+        "final": {
+          "quantity": 180,
+          "unit": "g",
+          "sentence": 7
+        }
+      },
+      {
+        "name": "sweet potato",
+        "name_sentence": 6,
+        "initial": {
+          "quantity": 200,
+          "unit": "g",
+          "sentence": 8
+        },
+        "final": {
+          "quantity": 160,
+          "unit": "g",
+          "sentence": 8
+        }
+      },
+      {
+        "name": "broccoli",
+        "name_sentence": 6,
+        "initial": null,
+        "final": {
+          "quantity": null,
+          "unit": null,
+          "sentence": 6
+        }
+      }
+    ]
+  },
+  {
+    "note": "no food at all - busy family saturday",
+    "sentences": [
+      "Absolutely manic Saturday.",
+      "Kids football in the morning, dropped them off at 8:30.",
+      "Did the supermarket shop while they were playing.",
+      "Picked them up at 10:30, then straight to my mum's for lunch.",
+      "Spent the afternoon helping her with some stuff around the house.",
+      "School run for my nephew too at some point.",
+      "Home by 6, knackered.",
+      "My partner had cooked so I had whatever they made."
+    ],
+    "foods": [
+      {
+        "name": "dinner",
+        "name_sentence": 7,
+        "initial": null,
+        "final": {
+          "quantity": null,
+          "unit": null,
+          "sentence": 7
+        }
+      }
+    ]
+  },
+  {
+    "note": "coffee shop morning - drinks and light food, precise then corrected",
+    "sentences": [
+      "Worked from the coffee shop this morning, needed a change of scene.",
+      "Got there around 9, ordered a flat white.",
+      "Also had a pastry — thought it was a pain au chocolat but it was an almond croissant.",
+      "Worked for about three hours, got loads done.",
+      "Had another flat white around 11.",
+      "Headed home for lunch — made a tuna and sweetcorn sandwich.",
+      "Two slices of bread, one tin of tuna drained, a bit of mayo."
+    ],
+    "foods": [
+      {
+        "name": "flat white",
+        "name_sentence": 1,
+        "initial": null,
+        "final": {
+          "quantity": 2,
+          "unit": null,
+          "sentence": 4
+        }
+      },
+      {
+        "name": "almond croissant",
+        "name_sentence": 2,
+        "initial": null,
+        "final": {
+          "quantity": 1,
+          "unit": null,
+          "sentence": 2
+        }
+      },
+      {
+        "name": "tuna sandwich",
+        "name_sentence": 5,
+        "initial": null,
+        "final": {
+          "quantity": null,
+          "unit": null,
+          "sentence": 5
+        }
+      }
+    ]
+  },
+  {
+    "note": "gradual food across a long evening in - tv, snacks accumulate",
+    "sentences": [
+      "Nothing planned so a proper evening in.",
+      "Started with some crisps while I decided what to watch.",
+      "Then made dinner — cheese on toast, three slices.",
+      "Had a cup of tea with it.",
+      "Kept snacking, had a couple of biscuits.",
+      "Then some grapes, maybe 100g.",
+      "Hot chocolate before bed.",
+      "Very relaxed, no complaints."
+    ],
+    "foods": [
+      {
+        "name": "crisps",
+        "name_sentence": 1,
+        "initial": null,
+        "final": {
+          "quantity": null,
+          "unit": null,
+          "sentence": 1
+        }
+      },
+      {
+        "name": "cheese on toast",
+        "name_sentence": 2,
+        "initial": null,
+        "final": {
+          "quantity": 3,
+          "unit": "slices",
+          "sentence": 2
+        }
+      },
+      {
+        "name": "tea",
+        "name_sentence": 3,
+        "initial": null,
+        "final": {
+          "quantity": null,
+          "unit": null,
+          "sentence": 3
+        }
+      },
+      {
+        "name": "biscuits",
+        "name_sentence": 4,
+        "initial": null,
+        "final": {
+          "quantity": null,
+          "unit": null,
+          "sentence": 4
+        }
+      },
+      {
+        "name": "grapes",
+        "name_sentence": 5,
+        "initial": null,
+        "final": {
+          "quantity": 100,
+          "unit": "g",
+          "sentence": 5
+        }
+      },
+      {
+        "name": "hot chocolate",
+        "name_sentence": 6,
+        "initial": null,
+        "final": {
+          "quantity": null,
+          "unit": null,
+          "sentence": 6
+        }
+      }
+    ]
   }
 ]
