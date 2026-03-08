@@ -36,7 +36,6 @@ trainer = Trainer(
     train_dataset=train_ds,
 )
 trainer.train()
-# Save tokenizer alongside results so the Vite dev server can find it.
 tokenizer.save_pretrained("./results")
 for example in val_ds.select(range(5)):
     input_text = "extract_food: " + example["input"]

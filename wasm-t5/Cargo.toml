@@ -1,0 +1,36 @@
+[package]
+name = "food-wasm"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib"]
+
+# ── candle from git ───────────────────────────────────────────────────────────
+# candle-core has an unconditional dep on tokenizers with features = ["onig"].
+# onig_sys is a C library that requires a WASM-capable C compiler + sysroot.
+# Build script (build-wasm.ps1 / build-wasm.sh) sets:
+#   CC_wasm32_unknown_unknown=clang
+#   CFLAGS_wasm32_unknown_unknown=--sysroot=<emscripten-or-wasi-sysroot>
+# Tokenisation itself is done entirely in JavaScript (src/backends/t5-tokenizer.ts).
+
+[dependencies]
+candle-core = { git = "https://github.com/huggingface/candle", package = "candle-core" }
+candle-nn = { git = "https://github.com/huggingface/candle", package = "candle-nn" }
+candle-transformers = { git = "https://github.com/huggingface/candle", package = "candle-transformers" }
+
+# WASM bindings
+wasm-bindgen = "0.2"
+console_error_panic_hook = "0.1"
+
+# getrandom must use the JS backend in WASM
+# v0.3 renamed the feature from "js" to "wasm_js"
+getrandom = { version = "0.3", features = ["wasm_js"] }
+
+# Config deserialization
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+[profile.release]
+opt-level = "s"
+lto = true
