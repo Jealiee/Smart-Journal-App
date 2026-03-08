@@ -1,5 +1,4 @@
 {
-  "_name_or_path": "t5-small",
   "architectures": [
     "T5ForConditionalGeneration"
   ],
@@ -10,6 +9,7 @@
   "decoder_start_token_id": 0,
   "dense_act_fn": "relu",
   "dropout_rate": 0.1,
+  "dtype": "float32",
   "eos_token_id": 1,
   "feed_forward_proj": "relu",
   "initializer_factor": 1.0,
@@ -25,6 +25,7 @@
   "pad_token_id": 0,
   "relative_attention_max_distance": 128,
   "relative_attention_num_buckets": 32,
+  "scale_decoder_outputs": true,
   "task_specific_params": {
     "summarization": {
       "early_stopping": true,
@@ -54,7 +55,7 @@
       "prefix": "translate English to Romanian: "
     }
   },
-  "transformers_version": "4.34.0.dev0",
-  "use_cache": true,
+  "transformers_version": "4.57.6",
+  "use_cache": false,
   "vocab_size": 32128
 }

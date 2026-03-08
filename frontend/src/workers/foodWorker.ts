@@ -1,11 +1,19 @@
-import { AutoTokenizer, env } from "@xenova/transformers";
-import wasmInit, { T5Model } from "../wasm/food_wasm.js";
+import {
+  AutoTokenizer,
+  AutoModelForSeq2SeqLM,
+  env,
+} from "@huggingface/transformers";
 
+env.localModelPath = self.location.origin + "/";
 env.allowLocalModels = true;
 env.allowRemoteModels = false;
-// pathJoin in @xenova/transformers strips the leading "/" from non-first parts,
-// so localModelPath must be "/" for absolute paths like "/models/food" to resolve correctly.
-env.localModelPath = "/";
+
+const wasmBase = new URL("/wasm-ort/", self.location.origin).href;
+env.backends.onnx.wasm.wasmPaths = wasmBase;
+env.backends.onnx.wasm.numThreads = Math.min(
+  navigator.hardwareConcurrency ?? 4,
+  4,
+);
 
 export type FoodItem = {
   name: string;
@@ -18,11 +26,6 @@ type InMsg =
   | { type: "extract"; text: string };
 
 type OutMsg = { type: "ready" } | { type: "result"; foods: FoodItem[] };
-
-let model: T5Model | null = null;
-let tokenizer: Awaited<
-  ReturnType<typeof AutoTokenizer.from_pretrained>
-> | null = null;
 
 function normalize(text: string): string {
   return text
@@ -54,44 +57,67 @@ function parseFoods(output: string): FoodItem[] {
     });
 }
 
+let tokenizer: Awaited<
+  ReturnType<typeof AutoTokenizer.from_pretrained>
+> | null = null;
+let model: Awaited<
+  ReturnType<typeof AutoModelForSeq2SeqLM.from_pretrained>
+> | null = null;
+
 self.onmessage = async (e: MessageEvent<InMsg>) => {
   const msg = e.data;
 
   if (msg.type === "load") {
-    await wasmInit();
-    const [weightsRes, configRes] = await Promise.all([
-      fetch(`${msg.modelPath}/model.safetensors`),
-      fetch(`${msg.modelPath}/config.json`),
+    // Strip leading slash — localModelPath already provides the base URL,
+    // so the model ID must be a bare relative path like "models/food".
+    const modelId = msg.modelPath.replace(/^\/+/, "");
+    console.log(
+      "[foodWorker] loading model id",
+      modelId,
+      "from",
+      env.localModelPath,
+    );
+
+    [tokenizer, model] = await Promise.all([
+      AutoTokenizer.from_pretrained(modelId),
+      AutoModelForSeq2SeqLM.from_pretrained(modelId, {
+        dtype: "fp32",
+        device: "webgpu",
+      }),
     ]);
-    const [weights, config] = await Promise.all([
-      weightsRes.arrayBuffer(),
-      configRes.arrayBuffer(),
-    ]);
-    tokenizer = await AutoTokenizer.from_pretrained(msg.modelPath);
-    model = new T5Model(new Uint8Array(weights), new Uint8Array(config));
+
+    const device = (model as any).sessions?.model?.config?.device ?? "unknown";
+    console.log("[foodWorker] model loaded, device:", device);
+
+    // Warmup: compile WebGPU shaders
+    const warmupInput = tokenizer!("warmup", { return_tensors: "pt" });
+    await model!.generate({ ...warmupInput, max_new_tokens: 1 });
+    console.log("[foodWorker] warmup done");
+
     self.postMessage({ type: "ready" } satisfies OutMsg);
     return;
   }
 
   if (msg.type === "extract") {
-    if (!model || !tokenizer) {
+    if (!tokenizer || !model) {
       console.error("[foodWorker] model not loaded");
       return;
     }
     const t0 = performance.now();
     const input = "extract_food: " + normalize(msg.text);
-    const encoded = await tokenizer(input, { return_tensors: "np" });
-    const inputIds = Uint32Array.from(
-      encoded.input_ids.data as BigInt64Array,
-      (v) => Number(v),
-    );
-    const outputIds = model.predict_ids(inputIds, 128);
-    const decoded: string = tokenizer.decode(Array.from(outputIds), {
+    const encoded = tokenizer(input, { return_tensors: "pt" });
+    const outputIds = await model.generate({
+      ...encoded,
+      max_new_tokens: 128,
+      use_cache: true,
+    });
+    const decoded = tokenizer.decode(outputIds[0], {
       skip_special_tokens: true,
     });
     const foods = parseFoods(decoded);
-    const t1 = performance.now();
-    console.log(`[foodWorker] prediction took ${(t1 - t0).toFixed(1)} ms`);
+    console.log(
+      `[foodWorker] prediction took ${(performance.now() - t0).toFixed(1)} ms`,
+    );
     self.postMessage({ type: "result", foods } satisfies OutMsg);
   }
 };
