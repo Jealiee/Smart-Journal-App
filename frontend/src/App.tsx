@@ -4,6 +4,7 @@ import { Box, ThemeProvider, createTheme, CssBaseline} from '@mui/material'
 import Sidebar from './components/sidebar'
 import Topbar from './components/topbar'
 import JournalPage from './pages/JournalPage'
+import Homepage from './pages/HomePage'
 
 
 function App() {
@@ -69,7 +70,7 @@ function App() {
           <Sidebar />
 
           {/* Main content */}
-          <JournalPage />
+          <Homepage />
 
         </Box>
       </Box>
