@@ -7,17 +7,23 @@ import FeedbackIcon from "@mui/icons-material/Feedback"
 import HomeIcon from "@mui/icons-material/Home"
 import { useState } from "react"
 
-function Sidebar() {
+interface SidebarProps {
+  setActivePage: (page: string) => void
+  activePage: string
+  pageKeys: string[] 
+}
+
+function Sidebar({ setActivePage }: SidebarProps) {
     const theme = useTheme()
     const [isExpanded, setIsExpanded] = useState(false)
     const mode = theme.palette.mode
 
     const items = [
-        { label: 'Homepage', icon: <HomeIcon /> },
-        { label: "Journal", icon: <EditNoteIcon /> },
-        { label: "Habits", icon: <ChecklistIcon /> },
-        { label: "Statistics", icon: <BarChartIcon /> },
-        { label: "Account", icon: <PersonIcon /> },
+        { key: 'home', label: 'Homepage', icon: <HomeIcon /> },
+        { key: 'journal', label: "Journal", icon: <EditNoteIcon /> },
+        { key: 'habits', label: "Habits", icon: <ChecklistIcon /> },
+        { key: 'statistics', label: "Statistics", icon: <BarChartIcon /> },
+        { key: 'account', label: "Account", icon: <PersonIcon /> },
     ]
 
     return (
@@ -40,6 +46,7 @@ function Sidebar() {
             {items.map((item) => (
                 <Box
                     key={item.label}
+                    onClick={()=>setActivePage(item.key)}
                     sx={{
                         display: "flex",
                         alignItems: "center",

@@ -6,10 +6,17 @@ import Topbar from './components/topbar'
 import JournalPage from './pages/JournalPage'
 import Homepage from './pages/HomePage'
 
-
 function App() {
   const [mode, setMode] = useState<'light' | 'dark'>('light')
   const toggleMode = () => setMode(prev => (prev === 'light' ? 'dark' : 'light'))
+
+  const pageComponents: Record<string, JSX.Element> =
+  {
+    home: <Homepage />,
+    journal: <JournalPage />,
+  }
+  
+  const [activePage, setActivePage] = useState<string>('home')
 
   const theme = createTheme({
     palette: {
@@ -67,10 +74,10 @@ function App() {
         <Box sx={{ display: 'flex', flex: 1, bgcolor: 'background.default' }}>
 
           {/* Sidebar */}
-          <Sidebar />
+          <Sidebar setActivePage={setActivePage} activePage={activePage} pageKeys={Object.keys(pageComponents)}/>
 
           {/* Main content */}
-          <Homepage />
+            {pageComponents[activePage]}
 
         </Box>
       </Box>
