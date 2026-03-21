@@ -5,6 +5,7 @@ import Sidebar from './components/sidebar'
 import Topbar from './components/topbar'
 import JournalPage from './pages/JournalPage'
 import Homepage from './pages/HomePage'
+import StatisticsPage from './pages/StatisticsPage'
 
 function App() {
   const [mode, setMode] = useState<'light' | 'dark'>('light')
@@ -14,6 +15,7 @@ function App() {
   {
     home: <Homepage />,
     journal: <JournalPage />,
+    statistics: <StatisticsPage/>
   }
   
   const [activePage, setActivePage] = useState<string>('home')
