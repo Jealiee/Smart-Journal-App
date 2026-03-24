@@ -32,29 +32,76 @@ export default function StatisticsPage() {
   const [metric, setMetric] = useState<Metric>("mood")
   const [range, setRange] = useState("7")
 
-  const MiniChart = ({ dataKey }: { dataKey: Metric }) => (
-    <Card sx={{ flex: 1 }}>
-      <CardContent sx={{ p: 1 }}>
-        <Typography variant="caption" sx={{ textTransform: "capitalize" }}>
-          {dataKey}
-        </Typography>
+  const MiniChart = ({
+    dataKey,
+    range,
+  }: {
+    dataKey: Metric
+    range: string
+  }) => {
+    // TODO: Fix that logic eventually
+    const rangeLabel = range === "7" ? "7d" : 'x'
 
-        <Box height={100}>
-          <ResponsiveContainer width="100%" height="100%">
-            <LineChart data={mockData}>
-              <YAxis hide />
-              <Line
-                type="monotone"
-                dataKey={dataKey}
-                strokeWidth={2}
-                dot={false}
-              />
-            </LineChart>
-          </ResponsiveContainer>
-        </Box>
-      </CardContent>
-    </Card>
-  )
+    return (
+      <Card sx={{ flex: 1 }}>
+        <CardContent
+          sx={{
+            p: 1.2,
+            height: "100%",
+            display: "flex",
+            flexDirection: "column",
+          }}
+        >
+          <Typography
+            variant="caption"
+            sx={{
+              textTransform: "capitalize",
+              mb: 0.5,
+            }}
+          >
+            {dataKey} ({rangeLabel})
+          </Typography>
+
+          <Box
+            sx={{
+              flex: 1,
+              display: "flex",
+              alignItems: "flex-end",
+            }}
+          >
+            <Box sx={{ width: "100%", height: 110 }}>
+              <ResponsiveContainer width="100%" height="100%">
+                <LineChart
+                  data={mockData}
+                  margin={{ top: 10, right: 15, left: 5, bottom: 5 }}
+                >
+                  <XAxis
+                    dataKey="date"
+                    interval={0}
+                    tick={{ fontSize: 10 }}
+                    axisLine={{ strokeWidth: 1 }}
+                    tickLine={false}
+                  />
+                  <YAxis
+                    width={35}
+                    tick={{ fontSize: 10 }}
+                    axisLine={{ strokeWidth: 1 }}
+                    tickLine={false}
+                  />
+                  <Line
+                    type="monotone"
+                    dataKey={dataKey}
+                    strokeWidth={2}
+                    dot={false}
+                  />
+                </LineChart>
+              </ResponsiveContainer>
+            </Box>
+          </Box>
+        </CardContent>
+      </Card>
+    )
+  }
 
   return (
     <Box
@@ -80,9 +127,9 @@ export default function StatisticsPage() {
         }}
       >
         <Box display="flex" flexDirection="column" gap={1.5}>
-          <MiniChart dataKey="sleep" />
-          <MiniChart dataKey="calories" />
-          <MiniChart dataKey="exercise" />
+          <MiniChart dataKey="sleep" range="7" />
+          <MiniChart dataKey="calories" range="7"/>
+          <MiniChart dataKey="exercise" range="7" />
         </Box>
 
         <Card
